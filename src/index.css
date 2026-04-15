@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 24 10% 8%;
+    --foreground: 36 20% 90%;
+
+    --card: 24 10% 12%;
+    --card-foreground: 36 20% 90%;
+
+    --popover: 24 10% 12%;
+    --popover-foreground: 36 20% 90%;
+
+    --primary: 30 80% 52%;
+    --primary-foreground: 24 10% 6%;
+
+    --secondary: 24 8% 18%;
+    --secondary-foreground: 36 20% 85%;
+
+    --muted: 24 8% 16%;
+    --muted-foreground: 30 10% 55%;
+
+    --accent: 90 30% 35%;
+    --accent-foreground: 90 30% 90%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 30 10% 20%;
+    --input: 30 10% 20%;
+    --ring: 30 80% 52%;
+
+    --radius: 0.75rem;
+
+    --gold: 38 70% 55%;
+    --gold-glow: 30 80% 52%;
+    --warm-dark: 24 10% 6%;
+    --warm-mid: 24 10% 14%;
+
+    --gradient-hero: linear-gradient(135deg, hsl(24 10% 6%) 0%, hsl(24 12% 12%) 50%, hsl(30 15% 10%) 100%);
+    --gradient-gold: linear-gradient(135deg, hsl(30 80% 52%), hsl(38 70% 55%));
+    --gradient-card: linear-gradient(180deg, hsl(24 10% 14%) 0%, hsl(24 10% 10%) 100%);
+
+    --shadow-gold: 0 4px 30px -5px hsl(30 80% 52% / 0.25);
+    --shadow-card: 0 8px 32px -8px hsl(0 0% 0% / 0.5);
+
+    --font-display: 'Bebas Neue', sans-serif;
+    --font-body: 'Inter', sans-serif;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    letter-spacing: 0.04em;
+  }
+}
+
+@layer utilities {
+  .text-gradient-gold {
+    background: var(--gradient-gold);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .bg-gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .bg-gradient-card {
+    background: var(--gradient-card);
+  }
+
+  .shadow-gold {
+    box-shadow: var(--shadow-gold);
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+
+  .glow-line {
+    height: 2px;
+    background: var(--gradient-gold);
+    border-radius: 999px;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
